@@ -1,0 +1,9 @@
+#dados importados da tabela para e-mail
+
+#passo 4 : Calcular indicadores
+#faturamento = soma coluna valor final
+faturamento = tabela['Valor Final'].sum()
+#qtdade produtos vendidos - coluna quantidade
+quantidade= tabela['Quantidade'].sum()
+
+print(quantidade)
