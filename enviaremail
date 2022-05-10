@@ -1,0 +1,39 @@
+#passo 5 : enviar e-mail
+#Abrir o e-mail https://mail.google.com/mail/u/0/#inbox
+
+#envio do e-mail automatizado
+pyautogui.hotkey('ctrl','t')
+pyperclip.copy('https://mail.google.com/mail/u/0/#inbox')
+pyautogui.hotkey('ctrl','v')
+pyautogui.press('enter')
+time.sleep(5)
+
+#clicar no escrever destinatario
+pyautogui.click(x=76, y=215)
+time.sleep(2)
+pyautogui.write('kelly_galhardo@hotmail.com')
+time.sleep(1)
+pyautogui.press('tab')
+time.sleep(1)
+#clicar no assunto
+pyautogui.click(x=852, y=313)
+time.sleep(1)
+pyautogui.write('Relatorio de vendas')
+#escreve o corpo do e-mail
+pyautogui.press('tab')
+time.sleep(2)
+texto=('''Oi amor
+Esse e um e-mail de teste
+esta automatizado e esta sendo enviado sozinho
+estou puxando de uma tabela o faturamento foi R${:.2f} e a quantidade foi {}'''.format(faturamento,quantidade))
+pyperclip.copy(texto)
+pyautogui.hotkey('ctrl','v')
+#anexar o arquivo
+pyautogui.click(x=954, y=638)
+time.sleep(2)
+pyautogui.click(x=74, y=226)
+time.sleep(2)
+pyautogui.click(x=299, y=174, clicks=2)
+time.sleep(10)
+#envia e-mail
+pyautogui.click(x=847, y=643)
